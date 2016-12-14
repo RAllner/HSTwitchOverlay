@@ -1,7 +1,7 @@
 {
-  "name": "Node.js-Chat",
-  "description": "Ein einfacher Chat mit Node.js",
-  "author": "NodeCode.de",
+  "name": "Hearthstone Twitch Overlay",
+  "description": "A lightweight node js application for a dynamic Hearthstone Twitch overlay. Implemented with the server-client-architecture you can control the overlay via web interface.",
+  "author": "Raphael Allner",
   "dependencies": {
     "express": "3.x",
     "jsonfile": "^2.4.0",
