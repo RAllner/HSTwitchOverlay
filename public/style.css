@@ -1,0 +1,164 @@
+@font-face {
+	font-family: 'LHC Uncial Caps'; /*a name to be used later*/
+	src: url('/font'); /*URL to font*/
+}
+
+
+
+body{
+	margin: 0;
+	padding: 0;
+	font: 16px "Helvetica neue", Helvetica, Arial, sans-serif;
+	color: #333;
+}
+body.green{
+	background-color: #00ff00;
+}
+
+
+header, footer{
+	display: inline;
+	position: fixed;
+	height: 28px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: auto;
+	padding: 14px;
+
+}
+header{
+	font-weight: bold;
+}
+header > div:last-child{
+	position: absolute;
+	left: 466px;
+	top: 0;
+	font-weight: normal;
+
+}
+
+footer > div:last-child{
+	position: absolute;
+	left: 466px;
+	bottom: 0;
+	font-weight: normal;
+}
+.innerBody {
+	width: 522px;
+	height: 100%;
+	display: inline-block;
+	position: fixed;
+	background-color: #00ff00;
+
+}
+footer{
+	top: auto;
+	bottom: 0;
+}
+input{
+	height: 1.5em;
+	font-size: 14px;
+}
+#content{
+	margin: 48px 0.5em;
+	list-style: none;
+}
+
+header h1, footer h1 {
+	font-size: 31px;
+	font-family: 'LHC Uncial Caps', sans-serif;
+	color: black;
+	display: inline;
+}
+
+fieldset {
+	border: none;
+}
+
+.qty {
+	width: 40px;
+	height: 25px;
+	text-align: center;
+}
+input.qtyplus { width:25px; height:25px;}
+input.qtyminus { width:25px; height:25px;}
+
+.picks img {
+	height: 50px;
+	width: 50px;
+}
+
+.bans img {
+	height: 50px;
+	width: 50px;
+}
+
+th img {
+	height: 50px;
+	width: 50px;
+}
+
+
+.score {
+	right: 0;
+	background-color: #ff9800;
+	padding: 14px;
+	font-family: 'LHC Uncial Caps', sans-serif;
+	font-size: 31px;
+	width: 28px;
+	height: 28px;
+	text-align: center;
+}
+
+.hidden {
+	display: none;
+}
+
+.shown {
+	display: inline;
+}
+.picks {
+	display: inline;
+}
+.bans {
+	display: inline;
+	float: right;
+}
+
+#picksAndBanA {
+	top: 150px;
+	position: absolute;
+	display: inline;
+	width: 495px;
+	padding: 14px;
+}
+#picksAndBanB {
+	bottom: 150px;
+	position: absolute;
+	display: inline;
+	width: 495px;
+	padding: 14px;
+}
+
+
+.picksB {
+
+}
+
+.btn {
+	width: 200px;
+	height: 50px;
+}
+
+@-webkit-keyframes greenPulse {
+	from { background-color: #8f8a8e; -webkit-box-shadow: 0 0 9px #333; }
+	50% { background-color: #e0d9db; -webkit-box-shadow: 0 0 18px #e6dbe0; }
+	to { background-color: #8f8a8e; -webkit-box-shadow: 0 0 9px #333; }
+}
+
+a.green.button {
+	-webkit-animation-name: greenPulse;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: infinite;
+}
