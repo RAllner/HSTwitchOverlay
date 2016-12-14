@@ -10,7 +10,9 @@ Install required packages:
    * Use following command: `npm install`
 
 To start the application use the command: `node server.js`
+
 The overlay will be reachable from: `localhost:8087`
+
 The admin panel will be reachable from: `localhost:8087/admin`
 
 ## Configuration
