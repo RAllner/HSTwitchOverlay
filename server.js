@@ -29,7 +29,7 @@ app.get('/admin', function (req, res) {
 
 app.get('/font', function (req, res) {
     // so wird die font ausgegeben
-    res.sendfile(__dirname + '/public/fonts/LHFUncialCaps.ttf');
+    res.sendfile(__dirname + '/public/fonts/font.ttf');
 });
 
 function loadValues (){

@@ -1,5 +1,5 @@
 @font-face {
-	font-family: 'LHC Uncial Caps'; /*a name to be used later*/
+	font-family: 'Font'; /*a name to be used later*/
 	src: url('/font'); /*URL to font*/
 }
 
@@ -75,7 +75,7 @@ input{
 
 header h1, footer h1 {
 	font-size: 28px;
-	font-family: 'LHC Uncial Caps', sans-serif;
+	font-family: 'Font', sans-serif;
 	color: black;
 	display: inline;
 }
@@ -116,7 +116,7 @@ th img {
 	right: 0;
 	background-color: #ff9800;
 	padding: 14px;
-	font-family: 'LHC Uncial Caps', sans-serif;
+	font-family: 'Font', sans-serif;
 	font-size: 28px;
 	width: 22px;
 	height: 22px;
