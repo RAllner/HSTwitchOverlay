@@ -13,6 +13,7 @@ $(document).ready(function(){
 	const use_ban = "ban";
 	const use_out = "out";
 
+
 	// WebSocket
 	var socket = io.connect();
 	// neue Nachricht
@@ -61,11 +62,7 @@ $(document).ready(function(){
 		}
     }
     function hideOrShowImg(pick, use, aOrB) {
-
-
 	    var selector = "";
-
-
 		if(pick.localeCompare(warrior) == 0){
 			selector += "warrior_"+aOrB;
 		} else if(pick.localeCompare(shaman) == 0){

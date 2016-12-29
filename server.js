@@ -40,16 +40,21 @@ function loadValues (){
 }
 
 function saveValues (data){
-    var file = 'values.json'
-    var obj = {nameA: data.nameA, nameB: data.nameB, scoreA: data.scoreA, scoreB: data.scoreB, picksA: data.picksA,  picksB: data.picksB, bansA: data.bansA, bansB: data.bansB, outA: data.outA, outB: data.outB}
+    var file = 'values.json';
+    var obj = {nameA: data.nameA, nameB: data.nameB, scoreA: data.scoreA, scoreB: data.scoreB, picksA: data.picksA,  picksB: data.picksB, bansA: data.bansA, bansB: data.bansB, outA: data.outA, outB: data.outB};
    jsonfile.writeFileSync(file, obj)
 }
 
+function loadValues() {
+    var file = 'values.json';
+    return jsonfile.readFileSync(file);
+}
 
 // Websocket
 io.sockets.on('connection', function (socket) {
 	// der Client ist verbunden
-	socket.emit('chat', { zeit: new Date(), text: 'Du bist nun mit dem Server verbunden!' });
+	var values = loadValues();
+	socket.emit('chat', { zeit: new Date(), nameA: values.nameA, nameB: values.nameB, scoreA: values.scoreA, scoreB: values.scoreB, picksA: values.picksA,  picksB: values.picksB, bansA: values.bansA, bansB: values.bansB, outA: values.outA, outB: values.outB});
 	// wenn ein Benutzer einen Text senden
 	socket.on('chat', function (data) {
 		saveValues(data);

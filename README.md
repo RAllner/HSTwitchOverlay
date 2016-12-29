@@ -5,6 +5,7 @@ Implemented with the server-client-architecture you can control the overlay via 
 ## How to install and run the application
 
 Install Node JS: https://nodejs.org
+
 Install required packages:
    * Go to project folder
    * Use following command: `npm install`
