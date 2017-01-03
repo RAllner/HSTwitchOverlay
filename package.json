@@ -1,5 +1,5 @@
 {
-  "name": "Hearthstone Twitch Overlay",
+  "name": "hearthstone-twitch-overlay",
   "description": "A lightweight node js application for a dynamic Hearthstone Twitch overlay. Implemented with the server-client-architecture you can control the overlay via web interface.",
   "author": "Raphael Allner",
   "dependencies": {
