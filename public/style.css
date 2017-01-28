@@ -10,7 +10,7 @@ Let's do the math: 1080p = 1920x1080 (16:9) cutting it to 4:3 results in (1440x1
 
 body.client{
 	height: 720px;
-	width: 320px;
+	width: 480px;
 	margin: 0;
 	padding: 0;
 	font: 16px "Helvetica neue", Helvetica, Arial, sans-serif;
@@ -33,12 +33,14 @@ body.green{
 header, footer{
 	display: inline;
 	position: fixed;
-	height: 28px;
+	height: 42px;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: auto;
-	padding: 11px;
+	padding: 21px;
+	padding-top: 21px;
+	padding-bottom: 11px
 
 }
 header{
@@ -46,7 +48,7 @@ header{
 }
 header > div:last-child{
 	position: absolute;
-	left: 250px;
+	left: 375px;
 	top: 0;
 	font-weight: normal;
 
@@ -54,13 +56,13 @@ header > div:last-child{
 
 footer > div:last-child{
 	position: absolute;
-	left: 250px;
+	left: 375px;
 	top: 0px;
 	font-weight: normal;
 }
 .innerBody {
-	width: 320px;
-	height: 720px;
+	width: 480px;
+	height: 1080px;
 	display: inline-block;
 	position: fixed;
 	background-color: #00ff00;
@@ -76,11 +78,10 @@ input{
 	list-style: none;
 }
 
-header h1, footer h1 {
-	font-size: 28px;
+.name {
+	font-size: 42px;
 	font-family: 'Font', sans-serif;
-	color: black;
-	display: inline;
+	width:  400px;
 }
 
 fieldset {
@@ -88,7 +89,8 @@ fieldset {
 }
 
 footer {
-	top: 670px;
+	top: 1005px;
+	font-weight: bold;
 }
 
 .qty {
@@ -100,30 +102,30 @@ input.qtyplus { width:25px; height:25px;}
 input.qtyminus { width:25px; height:25px;}
 
 .picks img {
-	height: 42px;
-	width: 42px;
+	height: 66px;
+	width: 66px;
 }
 
 .bans img {
-	height: 42px;
-	width: 42px;
+	height: 66px;
+	width: 66px;
 }
 
 th img {
-	height: 50px;
-	width: 50px;
+	height: 75px;
+	width: 75px;
 }
 
 
 .score {
 	right: 0;
-	background-color: #ff9800;
-	padding: 14px;
+	padding: 21px;
 	font-family: 'Font', sans-serif;
-	font-size: 28px;
-	width: 22px;
-	height: 22px;
+	font-size: 42px;
+	width: 33px;
+	height: 33px;
 	text-align: center;
+	display: inline;
 }
 
 .hidden {
@@ -142,22 +144,22 @@ th img {
 }
 
 #picksAndBanA {
-	top: 230px;
+	top: 345px;
 	position: absolute;
 	display: inline;
-	width: 272px;
-	padding: 12px;
-	padding-left: 24px;
-	padding-right 24px;
+	width: 408px;
+	padding: 18px;
+	padding-left: 36px;
+	padding-right 36px;
 }
 #picksAndBanB {
-	top: 418px;
+	top: 630px;
 	position: absolute;
 	display: inline;
-	width: 272px;
-	padding: 12px;
-	padding-left: 24px;
-	padding-right 24px;
+	width: 408px;
+	padding: 18px;
+	padding-left: 36px;
+	padding-right 36px;
 }
 
 
@@ -167,7 +169,7 @@ th img {
 
 .btn {
 	width: 200px;
-	height: 50px;
+	height: 75px;
 }
 
 @-webkit-keyframes greenPulse {
@@ -195,14 +197,14 @@ th {
 #lowerStream {
 	position: absolute;
 	background-color: black;
-	width: 320px;
-	height: 180px;
-	top: 490px;
+	width: 480px;
+	height: 270px;
+	top: 735px;
 }
 #upperStream {
 	position: absolute;
 	background-color: black;
-	width: 320px;
-	height: 180px;
-	top: 50px;
+	width: 480px;
+	height: 270px;
+	top: 75px;
 }

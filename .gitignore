@@ -31,6 +31,9 @@ node_modules
 jspm_packages
 public/fonts
 
+#
+values.json
+
 # Optional npm cache directory
 .npm
 
