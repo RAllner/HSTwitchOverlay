@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'Font'; /*a name to be used later*/
-	src: url('/font'); /*URL to font*/
+	src: url('/font/font.ttf'); /*URL to font*/
 }
 
 /*
@@ -48,7 +48,7 @@ header{
 }
 header > div:last-child{
 	position: absolute;
-	left: 375px;
+	left: 403px;
 	top: 0;
 	font-weight: normal;
 
@@ -56,7 +56,7 @@ header > div:last-child{
 
 footer > div:last-child{
 	position: absolute;
-	left: 375px;
+	left: 403px;
 	top: 0px;
 	font-weight: normal;
 }
@@ -144,22 +144,18 @@ th img {
 }
 
 #picksAndBanA {
-	top: 345px;
+	top: 65px;
 	position: absolute;
 	display: inline;
-	width: 408px;
-	padding: 18px;
-	padding-left: 36px;
-	padding-right 36px;
+	width: 436px;
+	padding: 18px 21px;
 }
 #picksAndBanB {
-	top: 630px;
+	top: 915px;
 	position: absolute;
 	display: inline;
-	width: 408px;
-	padding: 18px;
-	padding-left: 36px;
-	padding-right 36px;
+	width: 436px;
+	padding: 18px 21px;
 }
 
 
