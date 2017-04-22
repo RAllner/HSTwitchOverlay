@@ -33,6 +33,7 @@ body.green{
 header, footer{
 	display: inline;
 	position: fixed;
+	color: white;
 	height: 42px;
 	top: 0;
 	left: 0;
