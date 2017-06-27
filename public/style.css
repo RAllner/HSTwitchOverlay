@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'Font'; /*a name to be used later*/
-	src: url('/font/font.ttf'); /*URL to font*/
+	src: url('/font/lhf.ttf'); /*URL to font*/
 }
 
 /*
@@ -9,7 +9,7 @@ Let's do the math: 1080p = 1920x1080 (16:9) cutting it to 4:3 results in (1440x1
 */
 
 body.client{
-	height: 720px;
+	height: 1080px;
 	width: 480px;
 	margin: 0;
 	padding: 0;
@@ -25,8 +25,8 @@ body{
 }
 
 body.green{
-	background-color: #00ff00;
-	height: 720px;
+	background-color: rgba(0,255,0,0);
+	height: 1080px;
 }
 
 
@@ -66,7 +66,7 @@ footer > div:last-child{
 	height: 1080px;
 	display: inline-block;
 	position: fixed;
-	background-color: #00ff00;
+	background-color: rgba(0,255,0,0);
 
 }
 
