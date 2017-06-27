@@ -30,7 +30,7 @@ body.green{
 }
 
 
-header, footer{
+header{
 	display: inline;
 	position: fixed;
 	color: white;
@@ -42,8 +42,23 @@ header, footer{
 	padding: 21px;
 	padding-top: 21px;
 	padding-bottom: 11px
-
 }
+
+footer{
+	display: inline;
+	position: fixed;
+	color: white;
+	height: 42px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: auto;
+	padding: 21px;
+	padding-top: 11px;
+	padding-bottom: 21px
+}
+
+
 header{
 	font-weight: bold;
 }
