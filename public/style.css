@@ -81,7 +81,7 @@ footer > div:last-child{
 	height: 1080px;
 	display: inline-block;
 	position: fixed;
-	background-color: rgba(0,255,0,0);
+	background-color: rgba(0,255,0,1);
 
 }
 
@@ -142,6 +142,10 @@ th img {
 	height: 33px;
 	text-align: center;
 	display: inline;
+}
+footer .score {
+	padding-top: 11px;
+	padding-bottom: 21px
 }
 
 .hidden {
