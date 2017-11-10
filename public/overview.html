@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BarCraft HL HS dynamic Overlay</title>
+    <meta charset="utf-8">
+	<link rel="stylesheet" href="style_overview_new.css"/>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="client.js"></script>
+</head>
+<body class="client">
+
+<div class="innerbody">
+    <div class="playerAwrapper" id="playerA">
+        <div class="name" id="nameA"></div>
+		    <div id="picksAndBanA">
+        <div class="picks" id="picksA">
+            <img src="img/HERO_01.png" id="pick_img_warrior_A" class="hidden">
+            <img src="img/OHERO_01.png" id="out_img_warrior_A" class="hidden">
+            <img src="img/HERO_02.png" id="pick_img_shaman_A" class="hidden">
+            <img src="img/OHERO_02.png" id="out_img_shaman_A" class="hidden">
+            <img src="img/HERO_03.png" id="pick_img_rogue_A" class="hidden">
+            <img src="img/OHERO_03.png" id="out_img_rogue_A" class="hidden">
+            <img src="img/HERO_04.png" id="pick_img_paladin_A" class="hidden">
+            <img src="img/OHERO_04.png" id="out_img_paladin_A" class="hidden">
+            <img src="img/HERO_05.png" id="pick_img_hunter_A" class="hidden">
+            <img src="img/OHERO_05.png" id="out_img_hunter_A" class="hidden">
+            <img src="img/HERO_06.png" id="pick_img_druid_A" class="hidden">
+            <img src="img/OHERO_06.png" id="out_img_druid_A" class="hidden">
+            <img src="img/HERO_07.png" id="pick_img_warlock_A" class="hidden">
+            <img src="img/OHERO_07.png" id="out_img_warlock_A" class="hidden">
+            <img src="img/HERO_08.png" id="pick_img_mage_A" class="hidden">
+            <img src="img/OHERO_08.png" id="out_img_mage_A" class="hidden">
+            <img src="img/HERO_09.png" id="pick_img_priest_A" class="hidden">
+            <img src="img/OHERO_09.png" id="out_img_priest_A" class="hidden">
+        </div>
+        <div class="bans" id="bansA">
+            <img src="img/BHERO_01.png" id="ban_img_warrior_A" class="hidden">
+            <img src="img/BHERO_02.png" id="ban_img_shaman_A" class="hidden">
+            <img src="img/BHERO_03.png" id="ban_img_rogue_A" class="hidden">
+            <img src="img/BHERO_04.png" id="ban_img_paladin_A" class="hidden">
+            <img src="img/BHERO_05.png" id="ban_img_hunter_A" class="hidden">
+            <img src="img/BHERO_06.png" id="ban_img_druid_A" class="hidden">
+            <img src="img/BHERO_07.png" id="ban_img_warlock_A" class="hidden">
+            <img src="img/BHERO_08.png" id="ban_img_mage_A" class="hidden">
+            <img src="img/BHERO_09.png" id="ban_img_priest_A" class="hidden">
+        </div>
+    </div>
+	</div>
+	<div class="vswrapper"> VS </div>
+    <div class="playerBwrapper" id="playerB">
+        <div class="name" id="nameB"></div>
+		<div id="picksAndBanB">
+			<div class="picks" id="picksB">
+				<img src="img/HERO_01.png" id="pick_img_warrior_B" class="hidden">
+				<img src="img/OHERO_01.png" id="out_img_warrior_B" class="hidden">
+				<img src="img/HERO_02.png" id="pick_img_shaman_B" class="hidden">
+				<img src="img/OHERO_02.png" id="out_img_shaman_B" class="hidden">
+				<img src="img/HERO_03.png" id="pick_img_rogue_B" class="hidden">
+				<img src="img/OHERO_03.png" id="out_img_rogue_B" class="hidden">
+				<img src="img/HERO_04.png" id="pick_img_paladin_B" class="hidden">
+				<img src="img/OHERO_04.png" id="out_img_paladin_B" class="hidden">
+				<img src="img/HERO_05.png" id="pick_img_hunter_B" class="hidden">
+				<img src="img/OHERO_05.png" id="out_img_hunter_B" class="hidden">
+				<img src="img/HERO_06.png" id="pick_img_druid_B" class="hidden">
+				<img src="img/OHERO_06.png" id="out_img_druid_B" class="hidden">
+				<img src="img/HERO_07.png" id="pick_img_warlock_B" class="hidden">
+				<img src="img/OHERO_07.png" id="out_img_warlock_B" class="hidden">
+				<img src="img/HERO_08.png" id="pick_img_mage_B" class="hidden">
+				<img src="img/OHERO_08.png" id="out_img_mage_B" class="hidden">
+				<img src="img/HERO_09.png" id="pick_img_priest_B" class="hidden">
+				<img src="img/OHERO_09.png" id="out_img_priest_B" class="hidden">
+			</div>
+			<div class="bans" id="bansB">
+				<img src="img/BHERO_01.png" id="ban_img_warrior_B" class="hidden">
+				<img src="img/BHERO_02.png" id="ban_img_shaman_B" class="hidden">
+				<img src="img/BHERO_03.png" id="ban_img_rogue_B" class="hidden">
+				<img src="img/BHERO_04.png" id="ban_img_paladin_B" class="hidden">
+				<img src="img/BHERO_05.png" id="ban_img_hunter_B" class="hidden">
+				<img src="img/BHERO_06.png" id="ban_img_druid_B" class="hidden">
+				<img src="img/BHERO_07.png" id="ban_img_warlock_B" class="hidden">
+				<img src="img/BHERO_08.png" id="ban_img_mage_B" class="hidden">
+				<img src="img/BHERO_09.png" id="ban_img_priest_B" class="hidden">
+			</div>
+		</div>
+    </div>
+</div>
+	<div class="scorewrapper">
+		<div class="scoreA" id="scoreA"></div>
+		<div class="scoreB" id="scoreB"></div>
+</div>
+</body>
+</html>

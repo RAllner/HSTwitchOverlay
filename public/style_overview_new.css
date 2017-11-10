@@ -1,0 +1,92 @@
+@font-face {
+	font-family: 'Font'; /*a name to be used later*/
+	src: url('/font/bliz-quadrata.ttf'); /*URL to font*/
+}
+
+
+body{
+	margin: 0;
+	padding: 0;
+	font: 16px "Helvetica neue", Helvetica, Arial, sans-serif;
+	font-family: 'Font', sans-serif;
+	color: #333;
+}
+
+.innerbody {
+	height: 1080px;
+	width: 1920px;
+	position: relative;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scorewrapper {
+	height: 1080px;
+	width: 1920px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.picks {
+	display: inline;
+}
+.picks img {
+	height: 66px;
+	width: 66px;
+}
+
+.bans {
+	display: inline;
+	float: right;
+}
+.bans img {
+	height: 66px;
+	width: 66px;
+}
+
+.name {
+	text-align: center;
+	font-size: 30px;
+	margin-bottom: 15px;
+}
+
+.scoreA {
+position: relative;
+font-size: 60px;
+margin-right: 300px;
+}
+
+.scoreB {
+position: relative;
+font-size: 60px;
+}
+
+.playerAwrapper {
+	position: relative;
+	width:400px;
+	margin-right:200px;
+	margin-top:100px;
+}
+
+.playerBwrapper {
+	position: relative;
+	width:400px;
+	margin-left:200px;
+	margin-top:100px;
+}
+
+.vswrapper {
+	position: relative;
+	font-size: 60px;
+	text-align: center;
+	margin-top:100px;
+}
+
+.hidden {
+	display: none;
+}
