@@ -1,25 +1,84 @@
 $(document).ready(function(){
-	// WebSocket
+    const warrior = "warrior";
+    const hunter = "hunter";
+    const rogue = "rogue";
+    const mage = "mage";
+    const druid = "druid";
+    const shaman = "shaman";
+    const priest = "priest";
+    const warlock = "warlock";
+    const paladin = "paladin";
+
+    const use_pick = "class";
+    const use_ban = "ban";
+    const use_out = "out";
+
+
+    // WebSocket
 	var socket = io.connect();
 	// neue Nachricht
 	socket.on('chat', function (data) {
-		var zeit = new Date(data.zeit);
-		$('#content').append(
-			$('<li></li>').append(
-				// Uhrzeit
-				$('<span>').text('[' +
-					(zeit.getHours() < 10 ? '0' + zeit.getHours() : zeit.getHours())
-					+ ':' +
-					(zeit.getMinutes() < 10 ? '0' + zeit.getMinutes() : zeit.getMinutes())
-					+ '] '
-				),
-				// Name
-				$('<b>').text(typeof(data.name) != 'undefined' ? data.name + ': ' : ''),
-				// Text
-				$('<span>').text(data.text))
-		);
-		// nach unten scrollen
-		$('body').scrollTop($('body')[0].scrollHeight);
+        //if(data.source == 'admin') return;
+        // var zeit = new Date(data.zeit);
+        // $('#content').append(
+			// $('<li></li>').append(
+			// 	// Uhrzeit
+			// 	$('<span>').text('[' +
+			// 		(zeit.getHours() < 10 ? '0' + zeit.getHours() : zeit.getHours())
+			// 		+ ':' +
+			// 		(zeit.getMinutes() < 10 ? '0' + zeit.getMinutes() : zeit.getMinutes())
+			// 		+ '] '
+			// 	),
+			// 	// Name
+			// 	$('<em>').text(typeof(data.source) != 'undefined' ? data.source + ': ' : '')
+			// 	// Text
+        // ));
+
+        if(typeof data.nameA != 'undefined'){
+            $('#nameA').val(data.nameA);
+        }
+        if(typeof data.nameB != 'undefined'){
+            $('#nameB').val(data.nameB);
+        }
+        if(typeof data.scoreA != 'undefined'){
+            $('#scoreA').val(data.scoreA);
+        }
+        if(typeof data.scoreB != 'undefined'){
+            $('#scoreB').val(data.scoreB);
+        }
+
+        if(typeof data.picksA != 'undefined'){
+            for(var i of data.picksA) {
+                initializeCheckboxes(i,use_pick,'A');
+            };
+        };
+        if(typeof data.picksB != 'undefined'){
+            for(var i of data.picksB) {
+                initializeCheckboxes(i,use_pick,'B');
+            };
+        };
+        if(typeof data.bansA != 'undefined'){
+            for(var i of data.bansA) {
+                initializeCheckboxes(i,use_ban,'A');
+            };
+        };
+        if(typeof data.bansB != 'undefined'){
+            for(var i of data.bansB) {
+                initializeCheckboxes(i,use_ban,'B');
+            };
+        };
+        if(typeof data.outA != 'undefined'){
+            for(var i of data.outA) {
+                initializeCheckboxes(i,use_out,'A');
+            };
+        };
+        if(typeof data.outB != 'undefined'){
+            for(var i of data.outB) {
+                initializeCheckboxes(i,use_out,'B');
+            };
+        };
+
+
 	});
 	// Nachricht senden
 	function senden(){
@@ -48,7 +107,7 @@ $(document).ready(function(){
         }).get();
 
 		// Socket senden
-		socket.emit('chat', { nameA: nameA, nameB: nameB ,scoreA: scoreA, scoreB: scoreB, picksA: picksA, picksB: picksB, bansA: bansA, bansB: bansB, outA: outA, outB: outB});
+		socket.emit('chat', { nameA: nameA, nameB: nameB ,scoreA: scoreA, scoreB: scoreB, picksA: picksA, picksB: picksB, bansA: bansA, bansB: bansB, outA: outA, outB: outB, source:"admin"});
 		// Text-Eingabe leeren
 		$('#text').val('');
 	}
@@ -96,3 +155,7 @@ $(document).ready(function(){
     });
 
 });
+
+function initializeCheckboxes(heroClass, use, aOrB) {
+    $('#'+use+heroClass+aOrB).prop("checked", true);
+}
