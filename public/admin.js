@@ -95,22 +95,22 @@ $(document).ready(function(){
 		var nameB = $('#nameB').val();
 		var scoreA = $('#scoreA').val();
 		var scoreB = $('#scoreB').val();
-        var picksA = $('input[name=picksA]:checked').map(function(_, el) {
+        var picksA = $('input[class=picksA]:checked').map(function(_, el) {
             return $(el).val();
         }).get();
-        var picksB = $('input[name=picksB]:checked').map(function(_, el) {
+        var picksB = $('input[class=picksB]:checked').map(function(_, el) {
             return $(el).val();
         }).get();
-        var bansA = $('input[name=bansA]:checked').map(function(_, el) {
+        var bansA = $('input[class=bansA]:checked').map(function(_, el) {
             return $(el).val();
         }).get();
-        var bansB = $('input[name=bansB]:checked').map(function(_, el) {
+        var bansB = $('input[class=bansB]:checked').map(function(_, el) {
             return $(el).val();
         }).get();
-        var outA = $('input[name=outA]:checked').map(function(_, el) {
+        var outA = $('input[class=outA]:checked').map(function(_, el) {
             return $(el).val();
         }).get();
-        var outB = $('input[name=outB]:checked').map(function(_, el) {
+        var outB = $('input[class=outB]:checked').map(function(_, el) {
             return $(el).val();
         }).get();
         var overviewShowClasses = $('input[name=showClasses]').prop("checked");
