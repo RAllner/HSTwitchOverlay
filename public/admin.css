@@ -1,0 +1,18 @@
+.configContainer {
+
+    display: block;
+}
+.adminContainer {
+    margin: 2em;
+}
+
+#config {
+
+}
+
+#config td {
+    width: 100px;
+}
+
+#match-wrapper {
+}

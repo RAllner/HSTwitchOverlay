@@ -4,125 +4,141 @@
     <title>BCHL HS Overlay 0.1</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="admin.css"/>
     <script src="socket.io/socket.io.js"></script>
     <script src="jquery.min.js"></script>
     <script src="admin.js"></script>
 </head>
 <body>
-
-<div style="margin: 2em">
+<div class="adminContainer">
     <h1>BarCraft HL Overlay Control</h1>
-    <p>
-        <label>Name A
-            <input id="nameA" type="text" placeholder="Upper player"/>
-        </label>
-        <label>Score A
-            <input type='button' value='-' id='qtyminusA' class='qtyminus' field='quantity'/>
-            <input type='text' name='quantity' value='0' id='scoreA' class='qty'/>
-            <input type='button' value='+' id='qtyplusB' class='qtyplus' field='quantity'/>
-        </label>
-    </p>
+    <a> BCHL.oc: <a href="index.html">game-overlay</a> | <a href="overview.html">overview</a></p>
+        <div id="match-wrapper" class="configContainer">
+            <h2>Match control</h2>
+            <p>
+                <label>Name A
+                    <input id="nameA" type="text" placeholder="Upper player"/>
+                </label>
+                <label>Score A
+                    <input type='button' value='-' id='qtyminusA' class='qtyminus' field='quantity'/>
+                    <input type='text' name='quantity' value='0' id='scoreA' class='qty'/>
+                    <input type='button' value='+' id='qtyplusB' class='qtyplus' field='quantity'/>
+                </label>
+            </p>
+            <p>
+                <label>Name B
+                    <input id="nameB" type="text" placeholder="Lower player"/>
+                </label>
+                <label>Score B
+                    <input type='button' value='-' id='qtyminus2' class='qtyminus' field='quantityB'/>
+                    <input type='text' name='quantityB' value='0' id='scoreB' class='qty'/>
+                    <input type='button' value='+' id='qtyplus2' class='qtyplus' field='quantityB'/>
+                </label>
+            </p>
+            <table style="text-align: center">
+                <tr>
+                    <th></th>
+                    <th><img src="img/HERO_01.png"></th>
+                    <th><img src="img/HERO_02.png"></th>
+                    <th><img src="img/HERO_03.png"></th>
+                    <th><img src="img/HERO_04.png"></th>
+                    <th><img src="img/HERO_05.png"></th>
+                    <th><img src="img/HERO_06.png"></th>
+                    <th><img src="img/HERO_07.png"></th>
+                    <th><img src="img/HERO_08.png"></th>
+                    <th><img src="img/HERO_09.png"></th>
+                </tr>
+                <tr>
+                    <th>Picked A</th>
+                    <td><input id="classwarriorA" type="checkbox" name="picksA" value="warrior"></td>
+                    <td><input id="classshamanA" type="checkbox" name="picksA" value="shaman"></td>
+                    <td><input id="classrogueA" type="checkbox" name="picksA" value="rogue"></td>
+                    <td><input id="classpaladinA" type="checkbox" name="picksA" value="paladin"></td>
+                    <td><input id="classhunterA" type="checkbox" name="picksA" value="hunter"></td>
+                    <td><input id="classdruidA" type="checkbox" name="picksA" value="druid"></td>
+                    <td><input id="classwarlockA" type="checkbox" name="picksA" value="warlock"></td>
+                    <td><input id="classmageA" type="checkbox" name="picksA" value="mage"></td>
+                    <td><input id="classpriestA" type="checkbox" name="picksA" value="priest"></td>
+                </tr>
+                <tr>
+                    <th>Ban A</th>
+                    <td><input id="banwarriorA" type="checkbox" name="bansA" value="warrior"></td>
+                    <td><input id="banshamanA" type="checkbox" name="bansA" value="shaman"></td>
+                    <td><input id="banrogueA" type="checkbox" name="bansA" value="rogue"></td>
+                    <td><input id="banpaladinA" type="checkbox" name="bansA" value="paladin"></td>
+                    <td><input id="banhunterA" type="checkbox" name="bansA" value="hunter"></td>
+                    <td><input id="bandruidA" type="checkbox" name="bansA" value="druid"></td>
+                    <td><input id="banwarlockA" type="checkbox" name="bansA" value="warlock"></td>
+                    <td><input id="banAmageA" type="checkbox" name="bansA" value="mage"></td>
+                    <td><input id="banpriestA" type="checkbox" name="bansA" value="priest"></td>
+                </tr>
+                <tr>
+                    <th>Out A</th>
+                    <td><input id="outwarriorA" type="checkbox" name="outA" value="warrior"></td>
+                    <td><input id="outshamanA" type="checkbox" name="outA" value="shaman"></td>
+                    <td><input id="outrogueA" type="checkbox" name="outA" value="rogue"></td>
+                    <td><input id="outpaladinA" type="checkbox" name="outA" value="paladin"></td>
+                    <td><input id="outhunterA" type="checkbox" name="outA" value="hunter"></td>
+                    <td><input id="outdruidA" type="checkbox" name="outA" value="druid"></td>
+                    <td><input id="outwarlockA" type="checkbox" name="outA" value="warlock"></td>
+                    <td><input id="outmageA" type="checkbox" name="outA" value="mage"></td>
+                    <td><input id="outpriestA" type="checkbox" name="outA" value="priest"></td>
+                </tr>
+                <tr>
+                    <th>Picked B</th>
+                    <td><input id="classwarriorB" type="checkbox" name="picksB" value="warrior"></td>
+                    <td><input id="classshamanB" type="checkbox" name="picksB" value="shaman"></td>
+                    <td><input id="classrogueB" type="checkbox" name="picksB" value="rogue"></td>
+                    <td><input id="classpaladinB" type="checkbox" name="picksB" value="paladin"></td>
+                    <td><input id="classhunterB" type="checkbox" name="picksB" value="hunter"></td>
+                    <td><input id="classdruidB" type="checkbox" name="picksB" value="druid"></td>
+                    <td><input id="classwarlockB" type="checkbox" name="picksB" value="warlock"></td>
+                    <td><input id="classmageB" type="checkbox" name="picksB" value="mage"></td>
+                    <td><input id="classpriestB" type="checkbox" name="picksB" value="priest"></td>
+                </tr>
+                <tr>
+                    <th>Ban B</th>
+                    <td><input id="banwarriorB" type="checkbox" name="bansB" value="warrior"></td>
+                    <td><input id="banshamanB" type="checkbox" name="bansB" value="shaman"></td>
+                    <td><input id="banrogueB" type="checkbox" name="bansB" value="rogue"></td>
+                    <td><input id="banpaladinB" type="checkbox" name="bansB" value="paladin"></td>
+                    <td><input id="banhunterB" type="checkbox" name="bansB" value="hunter"></td>
+                    <td><input id="bandruidB" type="checkbox" name="bansB" value="druid"></td>
+                    <td><input id="banwarlockB" type="checkbox" name="bansB" value="warlock"></td>
+                    <td><input id="banmageB" type="checkbox" name="bansB" value="mage"></td>
+                    <td><input id="banpriestB" type="checkbox" name="bansB" value="priest"></td>
+                </tr>
+                <tr>
+                    <th>Out B</th>
+                    <td><input id="outwarriorB" type="checkbox" name="outB" value="warrior"></td>
+                    <td><input id="outshamanB" type="checkbox" name="outB" value="shaman"></td>
+                    <td><input id="outrogueB" type="checkbox" name="outB" value="rogue"></td>
+                    <td><input id="outpaladinB" type="checkbox" name="outB" value="paladin"></td>
+                    <td><input id="outhunterB" type="checkbox" name="outB" value="hunter"></td>
+                    <td><input id="outdruidB" type="checkbox" name="outB" value="druid"></td>
+                    <td><input id="outwarlockB" type="checkbox" name="outB" value="warlock"></td>
+                    <td><input id="outmageB" type="checkbox" name="outB" value="mage"></td>
+                    <td><input id="outpriestB" type="checkbox" name="outB" value="priest"></td>
+                </tr>
+            </table>
+            </p>
+            <input id="senden" type="submit" class="btn" value="Senden"/>
+        </div>
+        <div id="config" class="configContainer">
+            <h2>Config</h2>
+            <h3>Overview</h3>
+            <table>
+                <tr>
+                    <th>Classes</th>
+                    <td><input type="checkbox" name="showClasses" value="showClasses"></td>
+                    <th>Score</th>
+                    <td><input type="checkbox" name="showScore" value="showScore"></td>
+                </tr>
+            </table>
 
-    <p>
-        <label>Name B
-            <input id="nameB" type="text" placeholder="Lower player"/>
-        </label>
-        <label>Score B
-            <input type='button' value='-' id='qtyminus2' class='qtyminus' field='quantityB'/>
-            <input type='text' name='quantityB' value='0' id='scoreB' class='qty'/>
-            <input type='button' value='+' id='qtyplus2' class='qtyplus' field='quantityB'/>
-        </label>
-    </p>
-    <table style="text-align: center">
-        <tr>
-            <th></th>
-            <th><img src="img/HERO_01.png"></th>
-            <th><img src="img/HERO_02.png"></th>
-            <th><img src="img/HERO_03.png"></th>
-            <th><img src="img/HERO_04.png"></th>
-            <th><img src="img/HERO_05.png"></th>
-            <th><img src="img/HERO_06.png"></th>
-            <th><img src="img/HERO_07.png"></th>
-            <th><img src="img/HERO_08.png"></th>
-            <th><img src="img/HERO_09.png"></th>
-        </tr>
-        <tr>
-            <th>Picked A</th>
-            <td><input id="classwarriorA" type="checkbox" name="picksA" value="warrior"></td>
-            <td><input id="classshamanA" type="checkbox" name="picksA" value="shaman"></td>
-            <td><input id="classrogueA" type="checkbox" name="picksA" value="rogue"></td>
-            <td><input id="classpaladinA" type="checkbox" name="picksA" value="paladin"></td>
-            <td><input id="classhunterA" type="checkbox" name="picksA" value="hunter"></td>
-            <td><input id="classdruidA" type="checkbox" name="picksA" value="druid"></td>
-            <td><input id="classwarlockA" type="checkbox" name="picksA" value="warlock"></td>
-            <td><input id="classmageA" type="checkbox" name="picksA" value="mage"></td>
-            <td><input id="classpriestA" type="checkbox" name="picksA" value="priest"></td>
-        </tr>
-        <tr>
-            <th>Ban A</th>
-            <td><input id="banwarriorA" type="checkbox" name="bansA" value="warrior"></td>
-            <td><input id="banshamanA" type="checkbox" name="bansA" value="shaman"></td>
-            <td><input id="banrogueA" type="checkbox" name="bansA" value="rogue"></td>
-            <td><input id="banpaladinA" type="checkbox" name="bansA" value="paladin"></td>
-            <td><input id="banhunterA" type="checkbox" name="bansA" value="hunter"></td>
-            <td><input id="bandruidA" type="checkbox" name="bansA" value="druid"></td>
-            <td><input id="banwarlockA" type="checkbox" name="bansA" value="warlock"></td>
-            <td><input id="banAmageA" type="checkbox" name="bansA" value="mage"></td>
-            <td><input id="banpriestA" type="checkbox" name="bansA" value="priest"></td>
-        </tr>
-		<tr>
-            <th>Out A</th>
-            <td><input id="outwarriorA" type="checkbox" name="outA" value="warrior"></td>
-            <td><input id="outshamanA" type="checkbox" name="outA" value="shaman"></td>
-            <td><input id="outrogueA" type="checkbox" name="outA" value="rogue"></td>
-            <td><input id="outpaladinA" type="checkbox" name="outA" value="paladin"></td>
-            <td><input id="outhunterA" type="checkbox" name="outA" value="hunter"></td>
-            <td><input id="outdruidA" type="checkbox" name="outA" value="druid"></td>
-            <td><input id="outwarlockA" type="checkbox" name="outA" value="warlock"></td>
-            <td><input id="outmageA" type="checkbox" name="outA" value="mage"></td>
-            <td><input id="outpriestA" type="checkbox" name="outA" value="priest"></td>
-        </tr>
-        <tr>
-            <th>Picked B</th>
-            <td><input id="classwarriorB" type="checkbox" name="picksB" value="warrior"></td>
-            <td><input id="classshamanB" type="checkbox" name="picksB" value="shaman"></td>
-            <td><input id="classrogueB" type="checkbox" name="picksB" value="rogue"></td>
-            <td><input id="classpaladinB" type="checkbox" name="picksB" value="paladin"></td>
-            <td><input id="classhunterB" type="checkbox" name="picksB" value="hunter"></td>
-            <td><input id="classdruidB" type="checkbox" name="picksB" value="druid"></td>
-            <td><input id="classwarlockB" type="checkbox" name="picksB" value="warlock"></td>
-            <td><input id="classmageB" type="checkbox" name="picksB" value="mage"></td>
-            <td><input id="classpriestB" type="checkbox" name="picksB" value="priest"></td>
-        </tr>
-        <tr>
-            <th>Ban B</th>
-            <td><input id="banwarriorB" type="checkbox" name="bansB" value="warrior"></td>
-            <td><input id="banshamanB" type="checkbox" name="bansB" value="shaman"></td>
-            <td><input id="banrogueB" type="checkbox" name="bansB" value="rogue"></td>
-            <td><input id="banpaladinB" type="checkbox" name="bansB" value="paladin"></td>
-            <td><input id="banhunterB" type="checkbox" name="bansB" value="hunter"></td>
-            <td><input id="bandruidB" type="checkbox" name="bansB" value="druid"></td>
-            <td><input id="banwarlockB" type="checkbox" name="bansB" value="warlock"></td>
-            <td><input id="banmageB" type="checkbox" name="bansB" value="mage"></td>
-            <td><input id="banpriestB" type="checkbox" name="bansB" value="priest"></td>
-        </tr>
-        <tr>
-            <th>Out B</th>
-            <td><input id="outwarriorB" type="checkbox" name="outB" value="warrior"></td>
-            <td><input id="outshamanB" type="checkbox" name="outB" value="shaman"></td>
-            <td><input id="outrogueB" type="checkbox" name="outB" value="rogue"></td>
-            <td><input id="outpaladinB" type="checkbox" name="outB" value="paladin"></td>
-            <td><input id="outhunterB" type="checkbox" name="outB" value="hunter"></td>
-            <td><input id="outdruidB" type="checkbox" name="outB" value="druid"></td>
-            <td><input id="outwarlockB" type="checkbox" name="outB" value="warlock"></td>
-            <td><input id="outmageB" type="checkbox" name="outB" value="mage"></td>
-            <td><input id="outpriestB" type="checkbox" name="outB" value="priest"></td>
-        </tr>
-    </table>
-    </p>
-    <input id="senden" type="submit" class="btn" value="Senden"/>
+        </div>
+
+        <div id="content"></div>
 </div>
-
-<div id="content"></div>
 </body>
 </html>

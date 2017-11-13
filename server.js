@@ -45,7 +45,7 @@ function loadValues (){
 
 function saveValues (data){
     var file = 'values.json';
-    var obj = {nameA: data.nameA, nameB: data.nameB, scoreA: data.scoreA, scoreB: data.scoreB, picksA: data.picksA,  picksB: data.picksB, bansA: data.bansA, bansB: data.bansB, outA: data.outA, outB: data.outB};
+    var obj = {nameA: data.nameA, nameB: data.nameB, scoreA: data.scoreA, scoreB: data.scoreB, picksA: data.picksA,  picksB: data.picksB, bansA: data.bansA, bansB: data.bansB, outA: data.outA, outB: data.outB, overviewShowClasses: data.overviewShowClasses, overviewShowScore: data.overviewShowScore};
    jsonfile.writeFileSync(file, obj)
 }
 
@@ -58,12 +58,12 @@ function loadValues() {
 io.sockets.on('connection', function (socket) {
 	// der Client ist verbunden
 	var values = loadValues();
-	socket.emit('chat', { zeit: new Date(), nameA: values.nameA, nameB: values.nameB, scoreA: values.scoreA, scoreB: values.scoreB, picksA: values.picksA,  picksB: values.picksB, bansA: values.bansA, bansB: values.bansB, outA: values.outA, outB: values.outB, source:"server"});
+	socket.emit('chat', { zeit: new Date(), nameA: values.nameA, nameB: values.nameB, scoreA: values.scoreA, scoreB: values.scoreB, picksA: values.picksA,  picksB: values.picksB, bansA: values.bansA, bansB: values.bansB, outA: values.outA, outB: values.outB, source:"server", overviewShowClasses: values.overviewShowClasses, overviewShowScore: values.overviewShowScore});
 	// wenn ein Benutzer einen Text senden
 	socket.on('chat', function (data) {
 		saveValues(data);
 		// so wird dieser Text an alle anderen Benutzer gesendet
-		io.sockets.emit('chat', { zeit: new Date(), nameA: data.nameA, nameB: data.nameB, scoreA: data.scoreA, scoreB: data.scoreB, picksA: data.picksA,  picksB: data.picksB, bansA: data.bansA, bansB: data.bansB, outA: data.outA, outB: data.outB, source: data.source});
+		io.sockets.emit('chat', { zeit: new Date(), nameA: data.nameA, nameB: data.nameB, scoreA: data.scoreA, scoreB: data.scoreB, picksA: data.picksA,  picksB: data.picksB, bansA: data.bansA, bansB: data.bansB, outA: data.outA, outB: data.outB, source: data.source, overviewShowClasses: data.overviewShowClasses, overviewShowScore: data.overviewShowScore});
 		console.log('Update an Clients gesendet. Spiel: ' + data.nameA + " vs " + data.nameB + ' | trigger durch '+data.source);
 	});
 });

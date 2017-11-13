@@ -105,9 +105,11 @@ $(document).ready(function(){
         var outB = $('input[name=outB]:checked').map(function(_, el) {
             return $(el).val();
         }).get();
+        var overviewShowClasses = $('input[name=showClasses]').prop("checked");
+        var overviewShowScore = $('input[name=showScore]').prop("checked");
 
 		// Socket senden
-		socket.emit('chat', { nameA: nameA, nameB: nameB ,scoreA: scoreA, scoreB: scoreB, picksA: picksA, picksB: picksB, bansA: bansA, bansB: bansB, outA: outA, outB: outB, source:"admin"});
+		socket.emit('chat', { nameA: nameA, nameB: nameB ,scoreA: scoreA, scoreB: scoreB, picksA: picksA, picksB: picksB, bansA: bansA, bansB: bansB, outA: outA, outB: outB, source:"admin", overviewShowClasses: overviewShowClasses, overviewShowScore: overviewShowScore});
 		// Text-Eingabe leeren
 		$('#text').val('');
 	}
