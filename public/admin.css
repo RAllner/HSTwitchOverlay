@@ -1,9 +1,16 @@
-.configContainer {
+table {
+    border-collapse:collapse;
+}
 
+.configContainer {
     display: block;
 }
 .adminContainer {
     margin: 2em;
+}
+
+.separator {
+    border-bottom: 1px solid #333333;
 }
 
 #config {
@@ -16,3 +23,4 @@
 
 #match-wrapper {
 }
+
