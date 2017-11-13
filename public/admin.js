@@ -77,6 +77,14 @@ $(document).ready(function(){
                 initializeCheckboxes(i,use_out,'B');
             };
         };
+        if(typeof data.overviewShowScore !== "undefined") {
+            console.log(data.overviewShowScore);
+            $("input[name='showScore']").prop("checked", data.overviewShowScore);
+        }
+        if(typeof data.overviewShowClasses !== "undefined") {
+            $("input[name='showClasses']").prop("checked", data.overviewShowClasses);
+
+        }
 
 
 	});
