@@ -96,6 +96,7 @@ $(document).ready(function(){
             $("input[name='showClasses']").prop("checked", data.overviewShowClasses);
 
         }
+        processCheckTrigger();
 
 
 	});

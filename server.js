@@ -36,12 +36,7 @@ app.get('/font', function (req, res) {
     res.sendfile(__dirname + '/public/fonts/font.ttf');
 });
 
-function loadValues (){
-    var file = 'values.json';
-	return jsonfile.readFile(file, function (err, obj) {
-		return obj;
-    })
-}
+
 
 function saveValues (data){
     var file = 'values.json';
@@ -49,9 +44,15 @@ function saveValues (data){
    jsonfile.writeFileSync(file, obj)
 }
 
+
 function loadValues() {
     var file = 'values.json';
-    return jsonfile.readFileSync(file);
+    try {
+        return jsonfile.readFileSync(file);
+    } catch(err) {
+        return { zeit: new Date(), nameA: "Player A", nameB: "Player B", scoreA: 0, scoreB: 0, useA: [], useB: [], picksA: [],  picksB: [], bansA: [], bansB: [], outA: [], outB: [], source:"server", overviewShowClasses: true, overviewShowScore: false};
+    }
+
 }
 
 // Websocket
