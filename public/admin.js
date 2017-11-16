@@ -12,6 +12,7 @@ $(document).ready(function(){
     const use_pick = "class";
     const use_ban = "ban";
     const use_out = "out";
+    const use_use = "use";
 
 
     // WebSocket
@@ -46,6 +47,17 @@ $(document).ready(function(){
         if(typeof data.scoreB != 'undefined'){
             $('#scoreB').val(data.scoreB);
         }
+
+        if(typeof data.useA != 'undefined'){
+            for(var i of data.useA) {
+                initializeCheckboxes(i,use_use,'A');
+            };
+        };
+        if(typeof data.useB != 'undefined'){
+            for(var i of data.useB) {
+                initializeCheckboxes(i,use_use,'B');
+            };
+        };
 
         if(typeof data.picksA != 'undefined'){
             for(var i of data.picksA) {
@@ -95,6 +107,12 @@ $(document).ready(function(){
 		var nameB = $('#nameB').val();
 		var scoreA = $('#scoreA').val();
 		var scoreB = $('#scoreB').val();
+        var useA = $('input[class="useA checkTrigger"]:checked').map(function(_, el) {
+            return $(el).val();
+        }).get();
+        var useB = $('input[class="useB checkTrigger"]:checked').map(function(_, el) {
+            return $(el).val();
+        }).get();
         var picksA = $('input[class=picksA]:checked').map(function(_, el) {
             return $(el).val();
         }).get();
@@ -117,7 +135,7 @@ $(document).ready(function(){
         var overviewShowScore = $('input[name=showScore]').prop("checked");
 
 		// Socket senden
-		socket.emit('chat', { nameA: nameA, nameB: nameB ,scoreA: scoreA, scoreB: scoreB, picksA: picksA, picksB: picksB, bansA: bansA, bansB: bansB, outA: outA, outB: outB, source:"admin", overviewShowClasses: overviewShowClasses, overviewShowScore: overviewShowScore});
+		socket.emit('chat', { nameA: nameA, nameB: nameB ,scoreA: scoreA, scoreB: scoreB,useA: useA, useB: useB, picksA: picksA, picksB: picksB, bansA: bansA, bansB: bansB, outA: outA, outB: outB, source:"admin", overviewShowClasses: overviewShowClasses, overviewShowScore: overviewShowScore});
 		// Text-Eingabe leeren
 		$('#text').val('');
 	}
@@ -164,8 +182,66 @@ $(document).ready(function(){
         }
     });
 
+    $('.checkTrigger').click(function() {
+        processCheckTrigger();
+    });
+
 });
 
 function initializeCheckboxes(heroClass, use, aOrB) {
     $('#'+use+heroClass+aOrB).prop("checked", true);
+};
+
+function processCheckTrigger() {
+    var useA = $('.useA').toArray();
+    var useB = $('.useB').toArray();
+
+    if(typeof useA != 'undefined'){
+        for(var i of useA) {
+            if((i).checked == false) {
+                var temp = $('input[name='+i.value+'A]').toArray();
+                for(var j of temp) {
+                    j.disabled = true;
+                    j.checked = false;
+                }
+            } else {
+                var temp = $('input[name='+i.value+'A]').toArray();
+                var oneChecked = false;
+                var reference;
+                for(var j of temp) {
+                    console.log(j);
+                    j.disabled = false;
+                    if(j.checked) oneChecked=true;
+                    if(j.id == "class"+i.value+"A") reference = j;
+                }
+                if(!oneChecked && reference !== 'undefined') {
+                    reference.checked = true;
+                };
+            }
+        };
+    };
+    if(typeof useB != 'undefined'){
+        for(var i of useB) {
+            if((i).checked == false) {
+                var temp = $('input[name='+i.value+'B]').toArray();
+                for(var j of temp) {
+                    j.disabled = true;
+                    j.checked = false;
+                }
+            } else {
+                var temp = $('input[name='+i.value+'B]').toArray();
+                var oneChecked = false;
+                var reference;
+                for(var j of temp) {
+                    console.log(j);
+                    j.disabled = false;
+                    if(j.checked) oneChecked=true;
+                    if(j.id == "class"+i.value+"B") reference = j;
+                }
+                if(!oneChecked && reference !== 'undefined') {
+                    reference.checked = true;
+                };
+            };
+        };
+    };
 }
