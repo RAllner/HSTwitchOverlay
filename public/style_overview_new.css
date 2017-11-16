@@ -9,7 +9,7 @@ body{
 	padding: 0;
 	font: 16px "Helvetica neue", Helvetica, Arial, sans-serif;
 	font-family: 'Font', sans-serif;
-	color: #333;
+	color: #FFFFFF;
 }
 
 .innerbody {
@@ -19,6 +19,21 @@ body{
 	display: flex;
     align-items: center;
     justify-content: center;
+    background-color: RGBA(255,255,0,0.5);
+}
+
+#picksAndBanA {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#picksAndBanB {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .scoreWrapper {
@@ -34,50 +49,55 @@ body{
 
 .picks {
 	display: inline;
+	position: relative;
+
 }
 .picks img {
-	height: 66px;
-	width: 66px;
-}
-
-.bans {
-	display: inline;
-	float: right;
-}
-.bans img {
-	height: 66px;
-	width: 66px;
+	height: 30px;
+	width: 30px;
+    margin-right:20px;
+    margin-left:20px;
 }
 
 .name {
 	text-align: center;
 	font-size: 45px;
-	margin-bottom: 15px;
+	margin-bottom: 20px;
 }
 
 .scoreA {
 position: relative;
 font-size: 80px;
-margin-right: 300px;
+margin-right: 350px;
+    margin-bottom: 30px;
 }
 
 .scoreB {
 position: relative;
 font-size: 80px;
+    margin-bottom: 30px;
 }
 
 .playerAwrapper {
+    padding:17px;
 	position: relative;
-	width:400px;
-	margin-right:200px;
+	width:620px;
+	margin-right:150px;
 	margin-top:100px;
+    background-image: url(/img/third_party/Title_Border_bans_bigger.png);
+    background-position: top center;
+    background-repeat: no-repeat;
 }
 
 .playerBwrapper {
+    padding:17px;
 	position: relative;
-	width:400px;
-	margin-left:200px;
+	width:620px;
+	margin-left:150px;
 	margin-top:100px;
+    background-image: url(/img/third_party/Title_Border_bans_bigger.png);
+    background-position: top center;
+    background-repeat: no-repeat;
 }
 
 .vswrapper {

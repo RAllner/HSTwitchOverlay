@@ -90,7 +90,6 @@ $(document).ready(function(){
             };
         };
         if(typeof data.overviewShowScore !== "undefined") {
-            console.log(data.overviewShowScore);
             $("input[name='showScore']").prop("checked", data.overviewShowScore);
         }
         if(typeof data.overviewShowClasses !== "undefined") {
@@ -209,7 +208,6 @@ function processCheckTrigger() {
                 var oneChecked = false;
                 var reference;
                 for(var j of temp) {
-                    console.log(j);
                     j.disabled = false;
                     if(j.checked) oneChecked=true;
                     if(j.id == "class"+i.value+"A") reference = j;
@@ -233,7 +231,6 @@ function processCheckTrigger() {
                 var oneChecked = false;
                 var reference;
                 for(var j of temp) {
-                    console.log(j);
                     j.disabled = false;
                     if(j.checked) oneChecked=true;
                     if(j.id == "class"+i.value+"B") reference = j;
