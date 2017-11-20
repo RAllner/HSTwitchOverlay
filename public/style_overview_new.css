@@ -53,8 +53,8 @@ body{
 
 }
 .picks img {
-	height: 30px;
-	width: 30px;
+	height: 35px;
+	width: 35px;
     margin-right:20px;
     margin-left:20px;
 }
@@ -63,6 +63,7 @@ body{
 	text-align: center;
 	font-size: 45px;
 	margin-bottom: 20px;
+    text-shadow: 0 0 10px black;
 }
 
 .scoreA {
@@ -95,9 +96,16 @@ font-size: 80px;
 	width:620px;
 	margin-left:150px;
 	margin-top:100px;
-    background-image: url(/img/third_party/Title_Border_bans_bigger.png);
+
     background-position: top center;
     background-repeat: no-repeat;
+}
+
+.nobansBG{
+    background-image: url(/img/third_party/Title_Border.png);
+}
+.withbansBG{
+    background-image: url(/img/third_party/Title_Border_bans_biggest.png);
 }
 
 .vswrapper {

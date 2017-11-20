@@ -135,7 +135,7 @@ $(document).ready(function(){
         var overviewShowScore = $('input[name=showScore]').prop("checked");
 
 		// Socket senden
-		socket.emit('chat', { nameA: nameA, nameB: nameB ,scoreA: scoreA, scoreB: scoreB,useA: useA, useB: useB, picksA: picksA, picksB: picksB, bansA: bansA, bansB: bansB, outA: outA, outB: outB, source:"admin", overviewShowClasses: overviewShowClasses, overviewShowScore: overviewShowScore});
+		socket.emit('chat', { nameA: nameA, nameB: nameB, type: "match_update" ,scoreA: scoreA, scoreB: scoreB,useA: useA, useB: useB, picksA: picksA, picksB: picksB, bansA: bansA, bansB: bansB, outA: outA, outB: outB, source:"admin", overviewShowClasses: overviewShowClasses, overviewShowScore: overviewShowScore});
 		// Text-Eingabe leeren
 		$('#text').val('');
 	}

@@ -33,8 +33,12 @@ $(document).ready(function(){
         if(typeof data.overviewShowClasses !== "undefined") {
             if(data.overviewShowClasses == true) {
                 showClasses();
+                $(".playerAwrapper").addClass("withbansBG").removeClass("nobansBG");
+                $(".playerBwrapper").addClass("withbansBG").removeClass("nobansBG");
             } else {
                 hideClasses();
+                $(".playerAwrapper").addClass("nobansBG").removeClass("withbansBG");
+                $(".playerBwrapper").addClass("nobansBG").removeClass("withbansBG");
             }
         }
         // nach unten scrollen

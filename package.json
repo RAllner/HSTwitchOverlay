@@ -5,7 +5,8 @@
   "dependencies": {
     "express": "3.x",
     "jsonfile": "^2.4.0",
-    "socket.io": "*"
+    "socket.io": "*",
+    "jquery-csv": "^0.8.3"
   },
   "contributors": [
     {

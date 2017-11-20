@@ -5,6 +5,7 @@ var express = require('express')
 ,   server = require('http').createServer(app)
 ,   io = require('socket.io').listen(server)
 ,   conf = require('./config.json');
+    require('./node_modules/jquery-csv/src/jquery.csv');
 
 // Webserver
 // auf den Port x schalten
@@ -44,6 +45,22 @@ function saveValues (data){
    jsonfile.writeFileSync(file, obj)
 }
 
+function loadPlayerData() {
+    var file = 'playerdata.csv';
+    try {
+        var csv = fs.readFileSync(file);
+        return $.csv.toObjects(csv);
+    }
+    catch(err) {
+        return null;
+    }
+}
+
+function writePlayerData(data) {
+    var file = 'playerdata.csv';
+    fs.writeFileSync(file,data);
+}
+
 
 function loadValues() {
     var file = 'values.json';
@@ -59,12 +76,12 @@ function loadValues() {
 io.sockets.on('connection', function (socket) {
 	// der Client ist verbunden
 	var values = loadValues();
-	socket.emit('chat', { zeit: new Date(), nameA: values.nameA, nameB: values.nameB, scoreA: values.scoreA, scoreB: values.scoreB, useA: values.useA, useB: values.useB, picksA: values.picksA,  picksB: values.picksB, bansA: values.bansA, bansB: values.bansB, outA: values.outA, outB: values.outB, source:"server", overviewShowClasses: values.overviewShowClasses, overviewShowScore: values.overviewShowScore});
+	socket.emit('chat', { zeit: new Date(), type: "match_update", nameA: values.nameA, nameB: values.nameB, scoreA: values.scoreA, scoreB: values.scoreB, useA: values.useA, useB: values.useB, picksA: values.picksA,  picksB: values.picksB, bansA: values.bansA, bansB: values.bansB, outA: values.outA, outB: values.outB, source:"server", overviewShowClasses: values.overviewShowClasses, overviewShowScore: values.overviewShowScore});
 	// wenn ein Benutzer einen Text senden
 	socket.on('chat', function (data) {
 		saveValues(data);
 		// so wird dieser Text an alle anderen Benutzer gesendet
-		io.sockets.emit('chat', { zeit: new Date(), nameA: data.nameA, nameB: data.nameB, scoreA: data.scoreA, scoreB: data.scoreB, useA: data.useA, useB: data.useB, picksA: data.picksA,  picksB: data.picksB, bansA: data.bansA, bansB: data.bansB, outA: data.outA, outB: data.outB, source: data.source, overviewShowClasses: data.overviewShowClasses, overviewShowScore: data.overviewShowScore});
+		io.sockets.emit('chat', { zeit: new Date(), type: "match_update",nameA: data.nameA, nameB: data.nameB, scoreA: data.scoreA, scoreB: data.scoreB, useA: data.useA, useB: data.useB, picksA: data.picksA,  picksB: data.picksB, bansA: data.bansA, bansB: data.bansB, outA: data.outA, outB: data.outB, source: data.source, overviewShowClasses: data.overviewShowClasses, overviewShowScore: data.overviewShowScore});
 		console.log('Update an Clients gesendet. Spiel: ' + data.nameA + " vs " + data.nameB + ' | trigger durch '+data.source);
 	});
 });
