@@ -108,13 +108,13 @@ $(document).ready(function(){
 });
 
 function hideClasses() {
-    $('#picksAndBanA').addClass('hidden').removeClass('shown');
-    $('#picksAndBanB').addClass('hidden').removeClass('shown');
+    $('#picksAndBanA').addClass('hidden').removeClass('showWrapper');
+    $('#picksAndBanB').addClass('hidden').removeClass('showWrapper');
 }
 
 function showClasses() {
-    $('#picksAndBanA').addClass('shown').removeClass('hidden');
-    $('#picksAndBanB').addClass('shown').removeClass('hidden');
+    $('#picksAndBanA').addClass('showWrapper').removeClass('hidden');
+    $('#picksAndBanB').addClass('showWrapper').removeClass('hidden');
 }
 
 function hideScores() {

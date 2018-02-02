@@ -24,14 +24,14 @@ body{
 
 #picksAndBanA {
 	position: relative;
-	display: flex;
+
 	align-items: center;
 	justify-content: center;
 }
 
 #picksAndBanB {
 	position: relative;
-	display: flex;
+
 	align-items: center;
 	justify-content: center;
 }
@@ -117,4 +117,8 @@ font-size: 80px;
 
 .hidden {
 	display: none;
+}
+
+.showWrapper {
+	display: flex;
 }
