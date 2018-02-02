@@ -1,6 +1,6 @@
 {
   "name": "hearthstone-twitch-overlay",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A lightweight node js application for a dynamic Hearthstone Twitch overlay. Implemented with the server-client-architecture you can control the overlay via web interface.",
   "dependencies": {
     "express": "3.x",
