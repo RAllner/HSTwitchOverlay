@@ -1,6 +1,6 @@
 # HSTwitchOverlay
 A lightweight node js application for a dynamic Hearthstone Twitch overlay. 
-Implemented with the server-client-architecture you can control the overlay via web interface. 
+Implemented with the server-client-architecture.
 
 ## How to install and run the application
 
